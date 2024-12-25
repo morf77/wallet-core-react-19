@@ -44,7 +44,7 @@ module.exports = function override(config) {
     extensions: ['.js', '.ts', '.json','.tsx'],
     alias: {
       ...(config.resolve ? config.resolve.alias : {}),
-      // fs: "browserfs/dist/shims/fs.js",
+      fs: "browserfs/dist/shims/fs.js",
       "fs/promises": "browserfs/dist/shims/buffer.js",
       buffer: 'browserfs/dist/shims/buffer.js',
       path: 'browserfs/dist/shims/path.js',

@@ -7,9 +7,9 @@
     "buffer": "^6.0.3",
     "fs-extra": "^10.1.0",
     "node-polyfill-webpack-plugin": "^1.1.4",
-    "react": "^18.1.0",
+    "react": "19.0.0",
     "react-app-rewired": "^2.2.1",
-    "react-dom": "^18.1.0",
+    "react-dom": "19.0.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.6.4",
     "web-vitals": "^2.1.4"
@@ -21,8 +21,8 @@
     "@trustwallet/wallet-core": "^4.1.21",
     "@types/jest": "^27.5.0",
     "@types/node": "^16.11.34",
-    "@types/react": "^18.0.9",
-    "@types/react-dom": "^18.0.3",
+    "@types/react": "19.0.2",
+    "@types/react-dom": "19.0.2",
     "shx": "^0.3.4"
   },
   "scripts": {
