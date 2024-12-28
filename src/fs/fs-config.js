@@ -29,8 +29,8 @@ const fsPromises = {
   stat: util.promisify(fs.stat),
 };
 
-// fs.promises  = fsPromises
+fs.promises  = fsPromises
 
 
 
-module.exports = fsPromises;
+module.exports = fs;

@@ -29,7 +29,6 @@ const fsPromises = {
   stat: util.promisify(fs.stat),
 };
 
-// fs.promises  = fsPromises
 
 
 

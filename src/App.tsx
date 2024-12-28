@@ -3,6 +3,11 @@ import { Buffer } from "buffer";
 import * as BrowserFS from 'browserfs'
 import { promisify } from "util";
 
+import {
+   WalletCore,
+  initWasm,TW
+} from '@trustwallet/wallet-core';
+
 // import fsPromises from './fs-config.mjs'
 // import path from "path";
 
@@ -84,17 +89,22 @@ function App() {
   };
 
 
-  // const [isFsReady, setIsFsReady] = useState(false);
+  const [isFsReady, setIsFsReady] = useState(false);
 
-  window.WalletCore = WalletCore;
-  window.TW = TW;
+  (async()=>{
+    window.WalletCore =  await initWasm();
+    window.TW = TW;
+  })()
+
 
 
 
   useEffect(() => {
     try{
       configureBrowserFS()
-      .then(async() => console.log("BrowserFS initialized",await import('fs'),await import('./fs-config.js')))
+      .then(async() => console.log("BrowserFS initialized",await import('fs/promises')
+      // ,await import('./fs-config.js')
+    ))
       .catch((e)=>console.log(e))
       // .finally(async()=>console.log("BrowserFS initialized",await import('fs/promises'),await import('./fs-config.js')));
     } catch (e) {
@@ -114,13 +124,13 @@ function App() {
 
   // console.log('Webpack version:', require('webpack').version);
 
-
   return (
     <div>
-      <button onClick={handleCreateWallet}>Create Wallet</button>
-      <div>Mnemonic: {mnemonic}</div>
-      <button onClick={testSignEthereumTx}>Signing Ethereum tx</button>
-      <div>Raw tx: {rawTx}</div>
+        <button onClick={handleCreateWallet}>Create Wallet</button>
+        <div>Mnemonic: {mnemonic}</div>
+        <button onClick={testSignEthereumTx}>Signing Ethereum tx</button>
+        <div>Raw tx: {rawTx}</div>
+      
     </div>
   );
 }

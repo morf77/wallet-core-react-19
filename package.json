@@ -18,18 +18,21 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
-    "@trustwallet/wallet-core": "^4.1.21",
+    "@trustwallet/wallet-core": "^4.1.22",
     "@types/jest": "^27.5.0",
     "@types/node": "^16.11.34",
     "@types/react": "19.0.2",
     "@types/react-dom": "19.0.2",
-    "shx": "^0.3.4"
+    "shx": "^0.3.4",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
   },
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "postinstall": "shx mkdir -p public/static/js && shx cp node_modules/@trustwallet/wallet-core/dist/lib/wallet-core.* public/static/js",
-    "eject": "react-app-rewired eject"
+    "eject": "react-app-rewired eject",
+    "build:dev": "webpack --mode development"
   },
   "eslintConfig": {
     "extends": [
